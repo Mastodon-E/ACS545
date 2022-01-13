@@ -1,2 +1,3 @@
 # ACS545
-jegnnakeng
+This rep includes all files for ACS545 course.
+Created by Chawin Metah.
