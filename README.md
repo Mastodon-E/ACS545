@@ -1,5 +1,5 @@
 # ACS545
-This repository includes all files for ACS545 course.
+This repository includes all files for ACS545 Spring 2022 course.
 
 # About Me
 Name: Chawin Metah <br />
