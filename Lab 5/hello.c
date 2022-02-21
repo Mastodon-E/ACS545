@@ -16,4 +16,3 @@ void cleanup(void)
 
 module_init(initialization);
 module_exit(cleanup);
-
