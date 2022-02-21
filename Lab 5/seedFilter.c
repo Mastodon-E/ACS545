@@ -101,4 +101,3 @@ module_init(registerFilter);
 module_exit(removeFilter);
 
 MODULE_LICENSE("GPL");
-
