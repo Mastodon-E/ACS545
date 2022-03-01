@@ -24,7 +24,7 @@ print("Interface Name: {}".format(ifname))
 os.system("ip addr add 192.168.53.99/24 dev {}".format(ifname))
 os.system("ip link set dev {} up".format(ifname))
 
-while True:
+while (True):
    # Get a packet from the tun interface
    packet = os.read(tun, 2048)
    if packet:
