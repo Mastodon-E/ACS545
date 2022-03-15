@@ -17,7 +17,6 @@ D3 = bytearray.fromhex(HEX_2)
 
 r1 = xor(D1, D2)
 r2 = xor(r1, D3)
-#r3 = xor(D2, D2)
 print(r1.hex())
 print(r2.hex())
 print(r2)
