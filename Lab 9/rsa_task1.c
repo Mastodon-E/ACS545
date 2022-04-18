@@ -24,9 +24,6 @@ int main ()
   // Set the public key exponent e
   BN_hex2bn(&e, "0D88C3");
 
-  // Generate random p and q.
-  //BN_generate_prime_ex(p, NBITS, 1, NULL, NULL, NULL); 
-  //BN_generate_prime_ex(q, NBITS, 1, NULL, NULL, NULL);
   BN_hex2bn(&p, "F7E75FDC469067FFDC4E847C51F452DF");
   BN_hex2bn(&q, "E85CED54AF57E53E092113E62F436F4F");
   BN_sub(p_minus_one, p, BN_value_one());     // Compute p-1
@@ -47,15 +44,6 @@ int main ()
   // Compute the private key exponent d, s.t. ed mod phi(n) = 1
   BN_mod_inverse(d, e, phi, ctx);                         
   printBN("Private key:", d);
-
-  // Encryption: calculate m^e mod n
-  //BN_hex2bn(&m, "546869732069732061207365637265742e");    
-  //BN_mod_exp(c, m, e, n, ctx);
-  //printBN("Encryption result:", c);
-
-  // Decryption: calculate c^d mod n
-  //BN_mod_exp(new_m, c, d, n, ctx);
-  //printBN("Decryption result:", new_m);
 
   // Clear the sensitive data from the memory             
   BN_clear_free(p); BN_clear_free(q); BN_clear_free(d); 
