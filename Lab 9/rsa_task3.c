@@ -21,39 +21,13 @@ int main ()
   res = BN_new(); phi = BN_new(); new_m = BN_new(); 
   p_minus_one = BN_new(); q_minus_one = BN_new(); 
 
-  // Set the public key exponent e
-  BN_hex2bn(&e, "010001");
-
-  // Generate random p and q.
-  //BN_generate_prime_ex(p, NBITS, 1, NULL, NULL, NULL); 
-  //BN_generate_prime_ex(q, NBITS, 1, NULL, NULL, NULL);
-  //BN_hex2bn(&p, "F7E75FDC469067FFDC4E847C51F452DF");
-  //BN_hex2bn(&q, "E85CED54AF57E53E092113E62F436F4F");
-  //BN_sub(p_minus_one, p, BN_value_one());     // Compute p-1
-  //BN_sub(q_minus_one, q, BN_value_one());     // Compute q-1
-  //BN_mul(n, p, q, ctx);                       // Compute n=pq
-  //BN_mul(phi, p_minus_one, q_minus_one, ctx); // Compute (*@$\phi(n)$@*)
   BN_hex2bn(&n, "DCBFFE3E51F62E09CE7032E2677A78946A849DC4CDDE3A4D0CB81629242FB1A5");
   BN_hex2bn(&d, "74D806F9F3A62BAE331FFE3F0A68AFE35B3D2E4794148AACBC26AA381CD7D30D");
   BN_hex2bn(&c, "8C0F971DF2F3672B28811407E2DABBE1DA0FEBBBDFC7DCB67396567EA1E2493F");
 
   printBN("n:", n);
-  //printBN("e:", e);
-
-  // Check whether e and (*@$\phi(n)$@*) are relatively prime.  
-  //BN_gcd(res, phi, e, ctx);
-  //if (!BN_is_one(res)) { 
-     //exit(0);  // They are not relatively prime, try it again.
-  //}
-
-  // Compute the private key exponent d, s.t. ed mod phi(n) = 1
-  //BN_mod_inverse(d, e, phi, ctx);                         
+                       
   printBN("Private key:", d);
-
-  // Encryption: calculate m^e mod n
-  //BN_hex2bn(&m, "4120746f702073656372657421");    
-  //BN_mod_exp(c, m, e, n, ctx);
-  //printBN("M:", m);
   printBN("Encryption result:", c);
 
   // Decryption: calculate c^d mod n
