@@ -32,7 +32,7 @@ int main ()
   BN_hex2bn(&s, "643D6F34902D9C7EC90CB0B2BCA36C47FA37165C0005CAB026C0542CBDB6802F");    
   printBN("Digital signature:", s);
 
-  // Digital signature: calculate m^d mod n
+  // Verified message: calculate s^e mod n
   BN_mod_exp(new_m, s, e, n, ctx);
   printBN("Varified message:", new_m);
 
